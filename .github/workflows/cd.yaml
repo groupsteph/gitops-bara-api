@@ -83,7 +83,7 @@ jobs:
           git config --global user.email ${{secrets.G_USER_EMAIL}}
           git config --global user.name ${{secrets.G_USER_NAME}}
           echo ${{ github.sha }}
-          sed -i "s#${{secrets.DOCKER_USER}}.*#${{secrets.DOCKER_USER}}/bara-api:${{ github.sha }}#g" api-deployment.yaml
+          sed -i "s#${{secrets.DOCKER_USER}}.*#${{secrets.DOCKER_USER}}/bara-api:${{ github.sha }}#g" api-deployment.yml
           git add -A
           git commit -am "Update image for - ${{ github.sha }}"
       - run: echo ${{ github }}
